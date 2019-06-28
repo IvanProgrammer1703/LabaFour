@@ -1,0 +1,10 @@
+C:\Users\stiv\source\repos\LaboratoryWorkFour\LaboratoryWorkFour\bin\Debug\LaboratoryWorkFour.exe.config
+C:\Users\stiv\source\repos\LaboratoryWorkFour\LaboratoryWorkFour\bin\Debug\LaboratoryWorkFour.exe
+C:\Users\stiv\source\repos\LaboratoryWorkFour\LaboratoryWorkFour\bin\Debug\LaboratoryWorkFour.pdb
+C:\Users\stiv\source\repos\LaboratoryWorkFour\LaboratoryWorkFour\obj\Debug\LaboratoryWorkFour.csprojAssemblyReference.cache
+C:\Users\stiv\source\repos\LaboratoryWorkFour\LaboratoryWorkFour\obj\Debug\LaboratoryWorkFour.Form1.resources
+C:\Users\stiv\source\repos\LaboratoryWorkFour\LaboratoryWorkFour\obj\Debug\LaboratoryWorkFour.Properties.Resources.resources
+C:\Users\stiv\source\repos\LaboratoryWorkFour\LaboratoryWorkFour\obj\Debug\LaboratoryWorkFour.csproj.GenerateResource.cache
+C:\Users\stiv\source\repos\LaboratoryWorkFour\LaboratoryWorkFour\obj\Debug\LaboratoryWorkFour.csproj.CoreCompileInputs.cache
+C:\Users\stiv\source\repos\LaboratoryWorkFour\LaboratoryWorkFour\obj\Debug\LaboratoryWorkFour.exe
+C:\Users\stiv\source\repos\LaboratoryWorkFour\LaboratoryWorkFour\obj\Debug\LaboratoryWorkFour.pdb
