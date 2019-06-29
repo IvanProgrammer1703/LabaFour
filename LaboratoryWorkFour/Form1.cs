@@ -13,7 +13,10 @@ namespace LaboratoryWorkFour
 {
     public partial class Form1 : Form
     {
-        public ArrayList students = new ArrayList();
+
+        private List<Student> students = new List<Student>();
+
+        private List<Student> Students { get => students; set => students = value; }
 
         public Form1()
         {
@@ -71,12 +74,55 @@ namespace LaboratoryWorkFour
         {
 
             double result = (sub.mat + sub.fiz + sub.bio + sub.him + sub.ano) / 5;  
-           
+            
             MessageBox.Show("средний балл студента равен - " + result);
             return result;
 
         }
+            
+        private List<Student> SortListGood(List<Student> students) {
+            int count = 0;
 
+            foreach (Student i in students)
+            {
+                if (i.floor == "женский" && i.srBal == 5) {
+                    count++;
+                }
+                
+            }
+
+            Student[] stud = new Student[count];
+            int[] id = new int[count];
+            
+            count = 0;
+            int num = 0;
+            int idinc = 0;
+            foreach (Student i in students)
+            {
+                if (i.floor == "женский" && i.srBal == 5)
+                {
+                    stud[count] = i;
+                    id[idinc] = num;
+                    idinc++;
+                    count++;
+                }
+                num++;
+            }
+            //мортировочка подьехала
+            var studs = from i in stud
+                                 orderby i.name
+                                 select i;
+            
+            idinc = 0;
+
+            foreach (var item in studs)
+            {
+                int c = id[idinc];
+                students[c] = item;
+            }
+            
+            return students;
+        }
         private void name_TextChanged(object sender, EventArgs e)
         {
 
@@ -151,7 +197,7 @@ namespace LaboratoryWorkFour
 
                 Student student = new Student(name.Text, surname.Text, textBox3.Text, floor.Text, faculty.Text, Convert.ToInt32(course.Text), group.Text, city.Text,status);
 
-                    students.Add(student);
+                    Students.Add(student);
                
 
                 results.Text += "Имя : " + student.name + Environment.NewLine + "Фамилия :  " + student.surname + Environment.NewLine + "Курс: " + student.course + Environment.NewLine
@@ -169,6 +215,7 @@ namespace LaboratoryWorkFour
                 faculty.Clear();
                 surname.Clear();
                 textBox3.Clear();
+                floor.SelectedIndex = -1;
                 MessageBox.Show("Студент добавлен");
 
             }
@@ -189,8 +236,8 @@ namespace LaboratoryWorkFour
         private void generate_Click(object sender, EventArgs e)
         {
             results.Clear();
-
-            foreach (Student i in students)
+            Students = SortListGood(Students);
+            foreach (Student i in Students)
             {
                 results.Text += "Имя : " + i.name + Environment.NewLine + "Фамилия :  " + i.surname + Environment.NewLine + "Курс: " + i.course + Environment.NewLine
                 + "Группа :  " + i.group + Environment.NewLine + "Средний балл :  " + i.srBal + Environment.NewLine + Environment.NewLine;
