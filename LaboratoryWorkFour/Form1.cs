@@ -118,7 +118,9 @@ namespace LaboratoryWorkFour
             foreach (var item in studs)
             {
                 int c = id[idinc];
-                students[c] = item;
+                students.RemoveAt(c);
+                students.Insert(c,item);
+                idinc++;
             }
             
             return students;
@@ -239,8 +241,17 @@ namespace LaboratoryWorkFour
             Students = SortListGood(Students);
             foreach (Student i in Students)
             {
-                results.Text += "Имя : " + i.name + Environment.NewLine + "Фамилия :  " + i.surname + Environment.NewLine + "Курс: " + i.course + Environment.NewLine
+                if (i.floor == "женский" && i.srBal == 5)
+                {
+                        results.Text += "Имя : " + i.name + Environment.NewLine + "Фамилия :  " + i.surname + Environment.NewLine + "Курс: " + i.course + Environment.NewLine
+                    + "Группа :  " + i.group + Environment.NewLine + "Средний балл :  " + i.srBal+ Environment.NewLine + "ВНИМАНИЕ ЭТО ОТЛИЧНИЦА!!!!!!!!!!!!!!!!!!!!!!!!!!!  " 
+                    + Environment.NewLine + Environment.NewLine;
+                }
+                else
+                {
+                    results.Text += "Имя : " + i.name + Environment.NewLine + "Фамилия :  " + i.surname + Environment.NewLine + "Курс: " + i.course + Environment.NewLine
                 + "Группа :  " + i.group + Environment.NewLine + "Средний балл :  " + i.srBal + Environment.NewLine + Environment.NewLine;
+                }
             }
         }
 
